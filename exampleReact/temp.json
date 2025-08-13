@@ -1,0 +1,89 @@
+{
+  "env": {
+    "es6": true,
+    "node": true,
+    "browser": true,
+    "es2021": true,
+    "es2024": true
+  },
+  "globals": {},
+  "parser": "/Users/krivega/workspace/eslint-config/node_modules/@typescript-eslint/parser/dist/index.js",
+  "parserOptions": {
+    "project": "tsconfig.json",
+    "sourceType": "module",
+    "tsconfigRootDir": ".",
+    "ecmaFeatures": {
+      "jsx": true,
+      "generators": false,
+      "objectLiteralDuplicateProperties": false
+    },
+    "jsxPragma": null,
+    "ecmaVersion": 2018
+  },
+  "plugins": [
+    "@stylistic/ts",
+    "@stylistic",
+    "prettier",
+    "unicorn",
+    "import",
+    "jsx-a11y",
+    "@typescript-eslint",
+    "react",
+    "react-hooks"
+  ],
+  "rules": {
+    "react/boolean-prop-naming": [
+      "error",
+      {
+        "validateNested": true,
+        "rule": "^(is|has)[A-Z]([A-Za-z0-9]?)+"
+      }
+    ],
+    "react/no-unstable-nested-components": [
+      "error"
+    ],
+    "react/jsx-key": [
+      "error"
+    ],
+    "react/jsx-no-bind": [
+      "error",
+      {
+        "ignoreRefs": false,
+        "allowArrowFunctions": true,
+        "allowFunctions": true,
+        "allowBind": false,
+        "ignoreDOMComponents": false
+      }
+    ],
+    "react/jsx-sort-props": [
+      "error",
+      {
+        "callbacksLast": true,
+        "shorthandFirst": true,
+        "multiline": "ignore",
+        "locale": "auto"
+      }
+    ],
+    "react/function-component-definition": [
+      "error",
+      {
+        "namedComponents": "arrow-function",
+        "unnamedComponents": "arrow-function"
+      }
+    ],
+    "react/jsx-no-constructed-context-values": [
+      "error"
+    ],
+    "react/jsx-no-script-url": [
+      "error",
+      [
+        {
+          "name": "Link",
+          "props": [
+            "to"
+          ]
+        }
+      ]
+    ]
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "extends": "../tsconfig.base.json",
+  "compilerOptions": {
+    "baseUrl": "./",
+    "paths": {
+      "@/*": ["src/*"],
+      "~/*": ["src/*"],
+      "#*": ["src/*"]
+    },
+    "types": ["node"]
+  },
+  "include": ["src", "eslint.config.ts"]
+}

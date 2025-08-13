@@ -1,0 +1,26 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "noEmit": false,
+    "declaration": false,
+    "emitDeclarationOnly": false,
+    "composite": false,
+    "types": ["node"],
+    "skipLibCheck": false,
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "allowJs": false,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": false,
+    "isolatedModules": true,
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "target": "ESNext",
+    "useDefineForClassFields": true,
+    "resolveJsonModule": true
+  },
+  "include": ["./index.ts", "./react.ts", "./jest.ts", "./cypress.ts", "./eslint-plugins.d.ts"]
+}
