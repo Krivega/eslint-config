@@ -33,7 +33,7 @@
     "release:major": "standard-version --release-as major && yarn release:publish",
     "release:minor": "standard-version --release-as minor && yarn release:publish",
     "release:pre": "standard-version --prerelease && yarn release:publish",
-    "release:publish": "git push --follow-tags origin main && npm publish",
+    "release:publish": "git push --follow-tags origin main && npm publish --access public",
     "run:postinstall": "yarn --cwd ./example install && yarn --cwd ./exampleReact install"
   },
   "dependencies": {
