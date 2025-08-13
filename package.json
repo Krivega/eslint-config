@@ -31,8 +31,9 @@
     "prepublishOnly": "yarn build",
     "release": "standard-version && yarn release:publish",
     "release:major": "standard-version --release-as major && yarn release:publish",
+    "release:minor": "standard-version --release-as minor && yarn release:publish",
     "release:pre": "standard-version --prerelease && yarn release:publish",
-    "release:publish": "git push --follow-tags origin main",
+    "release:publish": "git push --follow-tags origin master && npm publish",
     "run:postinstall": "yarn --cwd ./example install && yarn --cwd ./exampleReact install"
   },
   "dependencies": {
