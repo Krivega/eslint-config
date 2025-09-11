@@ -191,6 +191,8 @@ const config: Linter.Config[] = [
             Utils: true,
             dev: true,
             Dev: true,
+            ref: true,
+            Ref: true,
           },
         },
       ],

@@ -24,7 +24,7 @@
   },
   "scripts": {
     "build": "tsc -p tsconfig.json",
-    "lint": "yarn lint:src && yarn lint:examples",
+    "lint": "yarn build && yarn lint:src && yarn lint:examples",
     "lint:examples": "yarn --cwd ./example lint && yarn --cwd ./exampleReact lint",
     "lint:src": "yarn lint:ts",
     "lint:ts": "tsc --noEmit --project tsconfig.json",
@@ -38,11 +38,11 @@
   },
   "dependencies": {
     "@babel/preset-typescript": "^7.27.1",
-    "@stylistic/eslint-plugin": "^5.2.3",
+    "@stylistic/eslint-plugin": "^5.3.1",
     "@types/eslint-plugin-jsx-a11y": "^6.10.0",
-    "@typescript-eslint/eslint-plugin": "^8.41.0",
-    "@typescript-eslint/parser": "^8.41.0",
-    "eslint": "^9.34.0",
+    "@typescript-eslint/eslint-plugin": "^8.43.0",
+    "@typescript-eslint/parser": "^8.43.0",
+    "eslint": "^9.35.0",
     "eslint-import-resolver-typescript": "^4.4.4",
     "eslint-plugin-cypress": "^5.1.1",
     "eslint-plugin-flowtype": "^8.0.3",
@@ -53,8 +53,8 @@
     "eslint-plugin-react": "7.37.5",
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-react-refresh": "^0.4.20",
-    "eslint-plugin-unicorn": "^60.0.0",
-    "globals": "^16.3.0",
+    "eslint-plugin-unicorn": "^61.0.2",
+    "globals": "^16.4.0",
     "typescript": "^5.9.2"
   },
   "devDependencies": {
@@ -64,7 +64,7 @@
     "standard-version": "^9.5.0"
   },
   "peerDependencies": {
-    "eslint": "^9.34.0",
+    "eslint": "^9.35.0",
     "typescript": "^5.9.2"
   },
   "packageManager": "yarn@1.22.22"

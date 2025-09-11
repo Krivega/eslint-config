@@ -2,12 +2,12 @@ import fs from 'node:fs';
 import path from 'node:path';
 
 import { Message } from '@/components';
+import { Button } from '../components/Button';
+import logger from '../logger';
 import './auto';
-import { Button } from './components/Button';
-import logger from './logger';
 
 import type { TMessageProps } from '@/components';
-import type { TButtonProps } from './components/Button';
+import type { TButtonProps } from '../components/Button';
 
 const buttonProps: TButtonProps = {
   title: 'test',
