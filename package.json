@@ -38,11 +38,11 @@
   },
   "dependencies": {
     "@babel/preset-typescript": "^7.27.1",
-    "@stylistic/eslint-plugin": "^5.4.0",
+    "@stylistic/eslint-plugin": "^5.5.0",
     "@types/eslint-plugin-jsx-a11y": "^6.10.1",
     "@typescript-eslint/eslint-plugin": "^8.46.1",
     "@typescript-eslint/parser": "^8.46.1",
-    "eslint": "^9.37.0",
+    "eslint": "^9.38.0",
     "eslint-import-resolver-typescript": "^4.4.4",
     "eslint-plugin-cypress": "^5.2.0",
     "eslint-plugin-flowtype": "^8.0.3",
@@ -64,7 +64,7 @@
     "standard-version": "^9.5.0"
   },
   "peerDependencies": {
-    "eslint": "^9.37.0",
+    "eslint": "^9.38.0",
     "typescript": "^5.9.3"
   },
   "packageManager": "yarn@1.22.22"
