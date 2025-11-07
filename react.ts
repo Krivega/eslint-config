@@ -1,4 +1,4 @@
-import type { Linter } from 'eslint';
+import type { ESLint, Linter } from 'eslint';
 import jsxA11y from 'eslint-plugin-jsx-a11y';
 import react from 'eslint-plugin-react';
 import reactHooks from 'eslint-plugin-react-hooks';
@@ -12,7 +12,11 @@ const reactConfig: Linter.Config[] = [
         version: 'detect',
       },
     },
-    plugins: { 'react-hooks': reactHooks, 'jsx-a11y': jsxA11y, react: react },
+    plugins: {
+      'react-hooks': reactHooks as unknown as ESLint.Plugin,
+      'jsx-a11y': jsxA11y as unknown as ESLint.Plugin,
+      react: react as unknown as ESLint.Plugin,
+    },
     rules: {
       '@stylistic/jsx-closing-bracket-location': ['error'],
       '@stylistic/jsx-closing-tag-location': ['error'],
