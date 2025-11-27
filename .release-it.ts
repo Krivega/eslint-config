@@ -10,6 +10,8 @@ export default {
   },
   npm: {
     publish: true,
+  },
+  publishConfig: {
     access: 'public',
     registry: 'https://registry.npmjs.org/',
   },
