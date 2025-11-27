@@ -7,7 +7,7 @@
     "emitDeclarationOnly": false,
     "composite": false,
     "types": ["node"],
-    "skipLibCheck": false,
+    "skipLibCheck": true,
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
@@ -22,5 +22,12 @@
     "useDefineForClassFields": true,
     "resolveJsonModule": true
   },
-  "include": ["./index.ts", "./react.ts", "./jest.ts", "./cypress.ts", "./eslint-plugins.d.ts"]
+  "include": [
+    "./index.ts",
+    "./react.ts",
+    "./jest.ts",
+    "./cypress.ts",
+    "./eslint-plugins.d.ts",
+    ".release-it.ts"
+  ]
 }

@@ -29,11 +29,7 @@
     "lint:src": "yarn lint:ts",
     "lint:ts": "tsc --noEmit --project tsconfig.json",
     "prepublishOnly": "yarn build",
-    "release": "standard-version && npm run release:publish && npm publish --access=public --registry=https://registry.npmjs.org/",
-    "release:alpha": "standard-version --prerelease alpha && npm run release:publish && npm publish --tag alpha --registry=https://registry.npmjs.org/",
-    "release:major": "standard-version --release-as major && npm run release:publish && npm publish --access=public --registry=https://registry.npmjs.org/",
-    "release:pre": "standard-version --prerelease && npm run release:publish && npm publish --tag prerelease --registry=https://registry.npmjs.org/",
-    "release:publish": "git push --follow-tags",
+    "release": "release-it && npm publish --access=public --registry=https://registry.npmjs.org/",
     "run:postinstall": "yarn --cwd ./example install && yarn --cwd ./exampleReact install"
   },
   "dependencies": {
@@ -60,8 +56,9 @@
   "devDependencies": {
     "@commitlint/cli": "^20.1.0",
     "@commitlint/config-conventional": "^20.0.0",
+    "@release-it/conventional-changelog": "^10.0.2",
     "prettier": "^3.7.0",
-    "standard-version": "^9.5.0"
+    "release-it": "^19.0.6"
   },
   "peerDependencies": {
     "eslint": "^9.39.1",
