@@ -22,6 +22,6 @@ export default {
   hooks: {
     'before:init': ['yarn lint'],
     'after:bump': 'yarn build',
-    'after:release': 'npm publish',
+    'after:release': 'npm publish --access=public --registry=https://registry.npmjs.org/',
   },
 } satisfies Config;
