@@ -9,7 +9,7 @@ export default {
     push: true,
   },
   npm: {
-    publish: false,
+    publish: true,
   },
   plugins: {
     '@release-it/conventional-changelog': {
