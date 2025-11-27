@@ -10,6 +10,8 @@ export default {
   },
   npm: {
     publish: true,
+    access: 'public',
+    registry: 'https://registry.npmjs.org/',
   },
   plugins: {
     '@release-it/conventional-changelog': {
