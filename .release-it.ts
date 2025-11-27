@@ -9,11 +9,7 @@ export default {
     push: true,
   },
   npm: {
-    publish: true,
-  },
-  publishConfig: {
-    access: 'public',
-    registry: 'https://registry.npmjs.org/',
+    publish: false,
   },
   plugins: {
     '@release-it/conventional-changelog': {
@@ -25,7 +21,6 @@ export default {
   },
   hooks: {
     'before:init': ['yarn lint'],
-    // 'after:conventional-changelog:bump': 'prettier --write "CHANGELOG.md"',
     'after:bump': 'yarn build',
     'after:release': 'git push origin HEAD --follow-tags',
   },
