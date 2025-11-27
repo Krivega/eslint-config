@@ -9,7 +9,7 @@ export default {
     push: true,
   },
   npm: {
-    publish: true,
+    publish: false,
   },
   plugins: {
     '@release-it/conventional-changelog': {
@@ -22,6 +22,6 @@ export default {
   hooks: {
     'before:init': ['yarn lint'],
     'after:bump': 'yarn build',
-    'after:release': 'git push origin HEAD --follow-tags',
+    'after:release': 'npm publish',
   },
 } satisfies Config;
