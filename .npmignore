@@ -34,3 +34,6 @@ tsconfig.*
 .prettierrc
 .versionrc.json
 commitlint.config.cjs
+*.code-workspace
+.release-it.js
+.release-it.ts
