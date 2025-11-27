@@ -8,13 +8,15 @@
     "moduleResolution": "bundler",
     "target": "ESNext",
     "useDefineForClassFields": true,
-    "lib": ["DOM", "DOM.Iterable", "ESNext"],
     "allowJs": false,
     "skipLibCheck": false,
     "esModuleInterop": true, //>>??
     "allowImportingTsExtensions": false,
     "resolveJsonModule": true,
     "noEmit": true,
+    "verbatimModuleSyntax": true,
+    "erasableSyntaxOnly": true,
+    "rewriteRelativeImportExtensions": true,
     /* Linting */
     "strict": true,
     "noUnusedLocals": true,

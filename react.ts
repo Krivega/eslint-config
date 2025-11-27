@@ -2,7 +2,7 @@ import type { ESLint, Linter } from 'eslint';
 import jsxA11y from 'eslint-plugin-jsx-a11y';
 import react from 'eslint-plugin-react';
 import reactHooks from 'eslint-plugin-react-hooks';
-import config from './index';
+import config from './index.js';
 
 const reactConfig: Linter.Config[] = [
   ...config,

@@ -1,6 +1,6 @@
 import type { Linter } from 'eslint';
 import pluginJest from 'eslint-plugin-jest';
-import config from './index';
+import config from './index.js';
 
 const jestConfig: Linter.Config[] = [
   ...config,

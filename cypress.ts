@@ -1,6 +1,6 @@
 import type { Linter } from 'eslint';
 import pluginCypress from 'eslint-plugin-cypress';
-import config from './index';
+import config from './index.js';
 
 const cypressConfig: Linter.Config[] = [
   ...config,
