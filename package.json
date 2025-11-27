@@ -29,7 +29,7 @@
     "lint:src": "yarn lint:ts",
     "lint:ts": "tsc --noEmit --project tsconfig.json",
     "prepublishOnly": "yarn build",
-    "release": "release-it && npm publish --access=public --registry=https://registry.npmjs.org/",
+    "release": "release-it",
     "run:postinstall": "yarn --cwd ./example install && yarn --cwd ./exampleReact install"
   },
   "dependencies": {
