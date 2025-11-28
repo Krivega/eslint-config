@@ -149,6 +149,12 @@ const config: Linter.Config[] = [
             'src/testUtils.{ts,tsx,js,jsx}',
             'src/testUtils/**',
             'src/mocks/**',
+            'tests/**',
+            'test/**',
+            'mocks/**',
+            '__mocks__/**',
+            'fixtures/**',
+            '__fixtures__/**',
             '**/__tests__/**/*.{ts,tsx,js,jsx}',
             '**/*.test.{ts,tsx,js,jsx}',
             '**/*.spec.{ts,tsx,js,jsx}',
@@ -158,6 +164,8 @@ const config: Linter.Config[] = [
             // configs and linters
             '**/*.config.{ts,js}',
             'eslint.config.{ts,js}',
+            '.release-it.{ts,js}',
+            'dangerfile.{ts,js}',
             // tooling and scripts
             'vite.*.{ts,js}',
             'scripts/**',
@@ -212,6 +220,7 @@ const config: Linter.Config[] = [
           ignoreArrowShorthand: true,
         },
       ],
+      'no-use-before-define': 'off',
       '@typescript-eslint/no-use-before-define': [
         'error',
         {
@@ -259,6 +268,7 @@ const config: Linter.Config[] = [
       '@typescript-eslint/no-loss-of-precision': ['error'],
       '@typescript-eslint/no-loop-func': ['error'],
       '@typescript-eslint/no-redeclare': ['error'],
+      'no-shadow': 'off',
       '@typescript-eslint/no-shadow': ['error'],
       '@typescript-eslint/only-throw-error': 'error',
       '@typescript-eslint/no-unused-expressions': [
@@ -292,7 +302,6 @@ const config: Linter.Config[] = [
           tsx: 'never',
         },
       ],
-      strict: ['error', 'never'],
       'import/export': ['error'],
       'import/no-unresolved': ['error'],
       'import/no-named-as-default': ['error'],
@@ -311,7 +320,7 @@ const config: Linter.Config[] = [
             // value imports aliases
             { pattern: '@/**', group: 'internal', position: 'before' },
             { pattern: '~/**', group: 'internal', position: 'before' },
-            { pattern: '#**', group: 'internal', position: 'before' }
+            { pattern: '#**', group: 'internal', position: 'before' },
           ],
           pathGroupsExcludedImportTypes: ['builtin', 'external'],
           alphabetize: { order: 'asc', caseInsensitive: true },
@@ -324,15 +333,6 @@ const config: Linter.Config[] = [
       'import/no-webpack-loader-syntax': ['error'],
       'import/no-named-default': ['error'],
       'import/no-self-import': ['error'],
-      'import/no-cycle': [
-        'error',
-        {
-          maxDepth: Infinity,
-          ignoreExternal: false,
-          allowUnsafeDynamicCyclicDependency: false,
-          disableScc: false,
-        },
-      ],
       'import/no-useless-path-segments': [
         'error',
         {
@@ -397,7 +397,6 @@ const config: Linter.Config[] = [
       ],
       'prefer-numeric-literals': ['error'],
       'prefer-rest-params': ['error'],
-      'prefer-spread': ['error'],
       'prefer-template': ['error'],
       'require-yield': ['error'],
       'symbol-description': ['error'],
@@ -801,6 +800,7 @@ const config: Linter.Config[] = [
       'unicorn/prefer-regexp-test': ['error'],
       'unicorn/prefer-set-has': ['error'],
       'unicorn/prefer-set-size': ['error'],
+      'prefer-spread': 'off',
       'unicorn/prefer-spread': ['error'],
       'unicorn/prefer-string-raw': ['error'],
       'unicorn/prefer-string-replace-all': ['error'],
@@ -879,7 +879,7 @@ const config: Linter.Config[] = [
       '@typescript-eslint/no-unsafe-assignment': ['error'],
       '@typescript-eslint/no-unsafe-call': ['error'],
       '@typescript-eslint/no-unsafe-declaration-merging': ['error'],
-      '@typescript-eslint/no-unsafe-enum-comparison': ['error'],
+      // '@typescript-eslint/no-unsafe-enum-comparison': ['error'], // TODO: remove this rule
       '@typescript-eslint/no-unsafe-member-access': ['error'],
       '@typescript-eslint/no-unsafe-return': ['error'],
       '@typescript-eslint/no-unsafe-unary-minus': ['error'],
@@ -897,9 +897,12 @@ const config: Linter.Config[] = [
       '@typescript-eslint/prefer-namespace-keyword': ['error'],
       '@typescript-eslint/prefer-nullish-coalescing': ['error'],
       '@typescript-eslint/prefer-optional-chain': ['error'],
-      '@typescript-eslint/prefer-promise-reject-errors': ['error', {
-        allowEmptyReject: true,
-      }],
+      '@typescript-eslint/prefer-promise-reject-errors': [
+        'error',
+        {
+          allowEmptyReject: true,
+        },
+      ],
       '@typescript-eslint/prefer-readonly': ['error'],
       '@typescript-eslint/prefer-reduce-type-parameter': ['error'],
       '@typescript-eslint/prefer-regexp-exec': ['error'],
@@ -909,6 +912,7 @@ const config: Linter.Config[] = [
       '@typescript-eslint/require-array-sort-compare': ['error'],
       '@typescript-eslint/restrict-plus-operands': ['error'],
       '@typescript-eslint/restrict-template-expressions': ['error'],
+      strict: ['error', 'never'],
       '@typescript-eslint/strict-boolean-expressions': ['error'],
       '@typescript-eslint/switch-exhaustiveness-check': ['error'],
       '@typescript-eslint/triple-slash-reference': ['error'],
@@ -974,18 +978,6 @@ const config: Linter.Config[] = [
       '@stylistic/key-spacing': ['error', { beforeColon: false, afterColon: true }],
       '@stylistic/keyword-spacing': ['error', { before: true, after: true }],
       '@stylistic/linebreak-style': ['error', 'unix'],
-      '@stylistic/max-len': [
-        'error',
-        {
-          code: 100,
-          tabWidth: 2,
-          ignoreUrls: true,
-          ignoreComments: false,
-          ignoreRegExpLiterals: true,
-          ignoreStrings: true,
-          ignoreTemplateLiterals: true,
-        },
-      ],
       '@stylistic/max-statements-per-line': ['error', { max: 1 }],
       '@stylistic/new-parens': ['error'],
       '@stylistic/no-mixed-spaces-and-tabs': ['error'],

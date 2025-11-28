@@ -29,7 +29,7 @@
     "lint:src": "yarn lint:ts",
     "lint:ts": "tsc --noEmit --project tsconfig.json",
     "prepublishOnly": "yarn build",
-    "release": "release-it",
+    "release": "release-it --only-version",
     "run:postinstall": "yarn --cwd ./example install && yarn --cwd ./exampleReact install"
   },
   "dependencies": {
@@ -57,7 +57,7 @@
     "@commitlint/cli": "^20.1.0",
     "@commitlint/config-conventional": "^20.0.0",
     "@release-it/conventional-changelog": "^10.0.2",
-    "prettier": "^3.7.0",
+    "prettier": "^3.7.1",
     "release-it": "^19.0.6"
   },
   "peerDependencies": {

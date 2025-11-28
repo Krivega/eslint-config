@@ -49,7 +49,6 @@ class C {
     foo();
   }
 
-  // eslint-disable-next-line @stylistic/max-len
   // eslint-disable-next-line @typescript-eslint/no-useless-constructor, @typescript-eslint/no-empty-function
   public constructor() {}
 
