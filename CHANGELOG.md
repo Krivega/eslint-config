@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.21](/compare/v1.0.20...v1.0.21) (2025-11-28)
+
+
+### Bug Fixes
+
+* update linter configuration to include additional test and mock directories, adjust rules, and clean up deprecated settings c314e5a
+
 ## [1.0.20](/compare/v1.0.19...v1.0.20) (2025-11-27)
 
 ## [1.0.19](/compare/v1.0.18...v1.0.19) (2025-11-27)
