@@ -1,5 +1,12 @@
 # Changelog
 
+# [1.1.0](/compare/v1.0.21...v1.1.0) (2025-11-30)
+
+
+### Features
+
+* add new request and response flags to configuration aafb821
+
 ## [1.0.21](/compare/v1.0.20...v1.0.21) (2025-11-28)
 
 
