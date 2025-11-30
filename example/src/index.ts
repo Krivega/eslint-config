@@ -121,6 +121,10 @@ const dev = true;
 const Dev = true;
 const ref = true;
 const Ref = true;
+const req = true;
+const Req = true;
+const res = true;
+const Res = true;
 
 // eslint-disable-next-line no-console
 console.log({
@@ -149,6 +153,10 @@ console.log({
   Dev,
   ref,
   Ref,
+  req,
+  Req,
+  res,
+  Res,
 });
 
 export type TLineLong =
