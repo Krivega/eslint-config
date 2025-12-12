@@ -56,9 +56,9 @@
   "devDependencies": {
     "@commitlint/cli": "^20.2.0",
     "@commitlint/config-conventional": "^20.2.0",
-    "@release-it/conventional-changelog": "^10.0.2",
+    "@release-it/conventional-changelog": "^10.0.3",
     "prettier": "^3.7.4",
-    "release-it": "^19.0.6"
+    "release-it": "^19.1.0"
   },
   "peerDependencies": {
     "eslint": "^9.39.1",
