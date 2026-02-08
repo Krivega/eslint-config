@@ -62,7 +62,8 @@
   },
   "peerDependencies": {
     "eslint": "^9.39.2",
-    "typescript": "^5.9.3"
+    "typescript": "^5.9.3",
+    "jiti": "^2.6.1"
   },
   "packageManager": "yarn@1.22.22"
 }
