@@ -833,7 +833,7 @@ const config: Linter.Config[] = [
       '@typescript-eslint/no-unsafe-function-type': 'error',
       '@typescript-eslint/no-restricted-types': 'error',
       '@typescript-eslint/class-literal-property-style': ['error'],
-      '@typescript-eslint/consistent-generic-constructors': ['error'],
+      // '@typescript-eslint/consistent-generic-constructors': ['error'],// TODO: enable this rule after fix (not working with eslint 10.0.0)
       '@typescript-eslint/consistent-indexed-object-style': ['error'],
       '@typescript-eslint/consistent-return': ['error'],
       '@typescript-eslint/consistent-type-assertions': ['error'],

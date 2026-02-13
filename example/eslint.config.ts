@@ -14,7 +14,7 @@ export default defineConfig([
     languageOptions: {
       parserOptions: {
         project: './tsconfig.json',
-        tsconfigRootDir: import.meta && typeof import.meta.url === 'string' ? undefined : process.cwd(),
+        tsconfigRootDir: process.cwd(),
       },
     },
   },

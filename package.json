@@ -16,8 +16,7 @@
   },
   "type": "module",
   "exports": {
-    ".": "./index.js",
-    "./react": "./react.js",
+    ".": "./index.js", 
     "./jest": "./jest.js",
     "./cypress": "./cypress.js",
     "./package.json": "./package.json"
@@ -25,30 +24,25 @@
   "scripts": {
     "build": "tsc -p tsconfig.json",
     "lint": "yarn build && yarn lint:src && yarn lint:examples",
-    "lint:examples": "yarn --cwd ./example lint && yarn --cwd ./exampleReact lint",
+    "lint:examples": "yarn --cwd ./example lint ",
     "lint:src": "yarn lint:ts",
     "lint:ts": "tsc --noEmit --project tsconfig.json",
     "prepublishOnly": "yarn build",
     "release": "release-it --only-version",
-    "run:postinstall": "yarn --cwd ./example install && yarn --cwd ./exampleReact install"
+    "run:postinstall": "yarn --cwd ./example install"
   },
   "dependencies": {
     "@babel/preset-typescript": "^7.28.5",
-    "@stylistic/eslint-plugin": "^5.7.1",
-    "@types/eslint-plugin-jsx-a11y": "^6.10.1",
-    "@typescript-eslint/eslint-plugin": "^8.54.0",
-    "@typescript-eslint/parser": "^8.54.0",
-    "eslint": "^9.39.2",
+    "@stylistic/eslint-plugin": "^5.8.0", 
+    "@typescript-eslint/eslint-plugin": "^8.55.0",
+    "@typescript-eslint/parser": "^8.55.0",
+    "eslint": "^10.0.0",
     "eslint-import-resolver-typescript": "^4.4.4",
-    "eslint-plugin-cypress": "^5.2.1",
+    "eslint-plugin-cypress": "^5.3.0",
     "eslint-plugin-import": "^2.32.0",
-    "eslint-plugin-jest": "^29.13.0",
-    "eslint-plugin-jsx-a11y": "^6.10.2",
+    "eslint-plugin-jest": "^29.14.0", 
     "eslint-plugin-prettier": "^5.5.5",
-    "eslint-plugin-react": "7.37.5",
-    "eslint-plugin-react-hooks": "^7.0.1",
-    "eslint-plugin-react-refresh": "^0.5.0",
-    "eslint-plugin-unicorn": "^62.0.0",
+    "eslint-plugin-unicorn": "^63.0.0",
     "globals": "^17.3.0",
     "jiti": "^2.6.1",
     "typescript": "^5.9.3"
@@ -61,7 +55,7 @@
     "release-it": "^19.2.4"
   },
   "peerDependencies": {
-    "eslint": "^9.39.2",
+    "eslint": "^10.0.0",
     "typescript": "^5.9.3"
   },
   "packageManager": "yarn@1.22.22"

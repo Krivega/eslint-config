@@ -22,12 +22,5 @@
     "useDefineForClassFields": true,
     "resolveJsonModule": true
   },
-  "include": [
-    "./index.ts",
-    "./react.ts",
-    "./jest.ts",
-    "./cypress.ts",
-    "./eslint-plugins.d.ts",
-    ".release-it.ts"
-  ]
+  "include": ["./index.ts", "./jest.ts", "./cypress.ts", "./eslint-plugins.d.ts", ".release-it.ts"]
 }
