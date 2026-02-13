@@ -1,5 +1,7 @@
 # Changelog
 
+## [1.1.13](https://github.com/Krivega/eslint-config/compare/v1.1.12...v1.1.13) (2026-02-13)
+
 ## [1.1.12](https://github.com/Krivega/eslint-config/compare/v1.1.11...v1.1.12) (2026-02-09)
 
 ## [1.1.11](https://github.com/Krivega/eslint-config/compare/v1.1.10...v1.1.11) (2026-02-09)

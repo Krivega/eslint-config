@@ -1,6 +1,6 @@
 {
   "name": "@krivega/eslint-config",
-  "version": "1.1.12",
+  "version": "1.1.13",
   "bugs": {
     "url": "https://github.com/Krivega/eslint-config/issues"
   },
@@ -16,7 +16,7 @@
   },
   "type": "module",
   "exports": {
-    ".": "./index.js", 
+    ".": "./index.js",
     "./jest": "./jest.js",
     "./cypress": "./cypress.js",
     "./package.json": "./package.json"
@@ -33,14 +33,14 @@
   },
   "dependencies": {
     "@babel/preset-typescript": "^7.28.5",
-    "@stylistic/eslint-plugin": "^5.8.0", 
+    "@stylistic/eslint-plugin": "^5.8.0",
     "@typescript-eslint/eslint-plugin": "^8.55.0",
     "@typescript-eslint/parser": "^8.55.0",
     "eslint": "^10.0.0",
     "eslint-import-resolver-typescript": "^4.4.4",
     "eslint-plugin-cypress": "^5.3.0",
     "eslint-plugin-import": "^2.32.0",
-    "eslint-plugin-jest": "^29.14.0", 
+    "eslint-plugin-jest": "^29.14.0",
     "eslint-plugin-prettier": "^5.5.5",
     "eslint-plugin-unicorn": "^63.0.0",
     "globals": "^17.3.0",
