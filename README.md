@@ -2,9 +2,10 @@
 
 ## Описание
 
-`Eslint config` содержит модули, позволяющие применят правила `krivega` `eslint` для проектов, использующих `typescript`, `тестовые фреймворки`jest`и`cypress`
+`Eslint config` содержит модули, позволяющие применят правила `krivega` `eslint` для проектов, использующих `typescript`, `react` и тестовые фреймворки `jest` и `cypress`
 
 - [`@krivega/eslint-config`](#@krivega/eslint-config)
+- [`@krivega/eslint-config/react`](#@krivega/eslint-config/react)
 - [`@krivega/eslint-config/jest`](#@krivega/eslint-config/jest)
 - [`@krivega/eslint-config/cypress`](#@krivega/eslint-config/cypress)
 
@@ -36,13 +37,23 @@ yarn add @krivega/eslint-config --dev
 }
 ```
 
-#### <a name="@krivega/eslint-config/jest"></a> `@krivega/eslint-config/jest`
+#### <a name="@krivega/eslint-config/react"></a> `@krivega/eslint-config/react`
 
-Необходимо расширить правила `@krivega/eslint-config/jest` в корневом файле `.eslintrc.json`.
+Необходимо расширить правила `@krivega/eslint-config/react` в корневом файле `.eslintrc.json`
 
 ```json
 {
-  "extends": ["@krivega/eslint-config/jest"]
+  "extends": ["@krivega/eslint-config/react"]
+}
+```
+
+#### <a name="@krivega/eslint-config/jest"></a> `@krivega/eslint-config/jest`
+
+Необходимо расширить правила `@krivega/eslint-config/jest` в корневом файле `.eslintrc.json`. Пример для проекта на `react`
+
+```json
+{
+  "extends": ["@krivega/eslint-config/jest", "@krivega/eslint-config/react"]
 }
 ```
 
