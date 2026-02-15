@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.14](https://github.com/Krivega/eslint-config/compare/v1.1.13...v1.1.14) (2026-02-15)
+
+
+### Reverts
+
+* Revert "chore!: update ESLint configuration and dependencies, remove unused react config" ([ca03e28](https://github.com/Krivega/eslint-config/commit/ca03e282456a0395c19e4132c69172f051d9bf59))
+
 ## [1.1.13](https://github.com/Krivega/eslint-config/compare/v1.1.12...v1.1.13) (2026-02-13)
 
 ## [1.1.12](https://github.com/Krivega/eslint-config/compare/v1.1.11...v1.1.12) (2026-02-09)
