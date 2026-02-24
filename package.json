@@ -33,11 +33,10 @@
     "run:postinstall": "yarn --cwd ./example install && yarn --cwd ./exampleReact install"
   },
   "dependencies": {
-    "@babel/preset-typescript": "^7.28.5",
-    "@stylistic/eslint-plugin": "^5.9.0",
+    "@stylistic/eslint-plugin": "5.8.0",
     "@types/eslint-plugin-jsx-a11y": "^6.10.1",
-    "@typescript-eslint/eslint-plugin": "^8.56.0",
-    "@typescript-eslint/parser": "^8.56.0",
+    "@typescript-eslint/eslint-plugin": "^8.56.1",
+    "@typescript-eslint/parser": "^8.56.1",
     "eslint": "^9.39.2",
     "eslint-import-resolver-typescript": "^4.4.4",
     "eslint-plugin-cypress": "^6.1.0",
@@ -47,10 +46,9 @@
     "eslint-plugin-prettier": "^5.5.5",
     "eslint-plugin-react": "7.37.5",
     "eslint-plugin-react-hooks": "^7.0.1",
-    "eslint-plugin-react-refresh": "^0.5.0",
+    "eslint-plugin-react-refresh": "^0.5.2",
     "eslint-plugin-unicorn": "^63.0.0",
     "globals": "^17.3.0",
-    "jiti": "^2.6.1",
     "typescript": "^5.9.3"
   },
   "devDependencies": {
