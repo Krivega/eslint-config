@@ -6,7 +6,6 @@ import { defineConfig } from 'eslint/config';
 import jestConfig from '../jest';
 import reactConfig from '../react';
 
-
 const gitignorePath = fileURLToPath(new URL('.gitignore', import.meta.url));
 const extendsConfig = [jestConfig, reactConfig];
 
