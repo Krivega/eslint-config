@@ -196,9 +196,7 @@ const getParent = <T>(self: T, index: number) => {
 
 export const getActions = (self: TConfirmationStore) => {
   const close = () => {
-    const { removeConfirmation } = getParent<{
-      removeConfirmation: (self: TConfirmationStore) => void;
-    }>(self, PARENT_MODEL_INDEX);
+    const { removeConfirmation } = getParent(self, PARENT_MODEL_INDEX);
 
     removeConfirmation(self as TConfirmationStore);
   };
