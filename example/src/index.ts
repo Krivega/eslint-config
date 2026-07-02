@@ -100,6 +100,8 @@ const i = true;
 const j = true;
 const args = true;
 const Args = true;
+const arg = true;
+const Arg = true;
 const e2e = true;
 const db = true;
 const DB = true;
@@ -125,6 +127,9 @@ const req = true;
 const Req = true;
 const res = true;
 const Res = true;
+const deps = true;
+const Deps = true;
+const typeMST = true;
 
 // eslint-disable-next-line no-console
 console.log({
@@ -132,6 +137,8 @@ console.log({
   j,
   args,
   Args,
+  arg,
+  Arg,
   e2e,
   db,
   DB,
@@ -157,12 +164,13 @@ console.log({
   Req,
   res,
   Res,
+  deps,
+  Deps,
+  typeMST,
 });
 
 export type TLineLong =
-  | { type: 'EVENT_IDLE' }
-  | { type: 'EVENT_VALID' }
-  | { type: 'EVENT_INVALID' };
+  { type: 'EVENT_IDLE' } | { type: 'EVENT_VALID' } | { type: 'EVENT_INVALID' };
 
 export type TValidationResult =
   | {
