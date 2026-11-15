@@ -31,5 +31,6 @@ tsconfig.tsbuildinfo
 /cypress.js
 /index.js
 /jest.js
+/vitest.js
 /react.js
 /.release-it.js

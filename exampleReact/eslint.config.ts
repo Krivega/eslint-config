@@ -1,7 +1,6 @@
-import { defineConfig } from 'eslint/config';
-
 import jestConfig from '../jest';
 import reactConfig from '../react';
+import { defineConfig } from 'eslint/config';
 
 const extendsConfig = [jestConfig, reactConfig];
 

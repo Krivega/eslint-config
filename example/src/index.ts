@@ -211,3 +211,49 @@ export const getActions = (self: TConfirmationStore) => {
 
   return { close };
 };
+
+const allStreams = [{ id: '1' }, { id: '2' }, { id: '3' }];
+const activeItem = { id: '2' };
+export const getActiveIndex = (): number | undefined => {
+  const foundedIndex = allStreams.findIndex((item) => {
+    return item.id === activeItem.id;
+  });
+
+  return foundedIndex === -1 ? undefined : foundedIndex;
+};
+
+const isChecked: boolean = Math.random() > 3;
+const testObject: { foo: string } = { foo: '1' };
+const bar = '2';
+const value = 'value';
+const format = (v: string) => {
+  return v.toLocaleLowerCase();
+};
+
+// Все условие и выражения веток однострочные: `only-single-line` требует тернарный оператор.
+if (isChecked) {
+  testObject.foo = format(value);
+} else {
+  testObject.foo = bar;
+}
+
+// Условие занимает несколько строк, поэтому правило не срабатывает.
+if (
+  isChecked &&
+  testObject.foo === 'initial-value-before-formatting-is-long-enough-to-stay-on-a-separate-line'
+) {
+  testObject.foo = format(value);
+} else {
+  testObject.foo = bar;
+}
+
+// Выражение первой ветки занимает несколько строк, поэтому правило не срабатывает.
+if (isChecked) {
+  testObject.foo = format(
+    'value-is-deliberately-long-enough-to-stay-on-a-separate-line-after-formatting-in-this-configuration-example',
+  );
+} else {
+  testObject.foo = bar;
+}
+
+export { testObject };

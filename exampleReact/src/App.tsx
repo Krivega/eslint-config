@@ -4,7 +4,6 @@ import './App.css';
 import Example from './Example';
 import ReactLogo from './ReactLogo';
 import ViteLogo from './ViteLogo';
-// eslint-disable-next-line import/no-unresolved
 import viteLogoSource from '/vite.svg';
 
 const App = () => {

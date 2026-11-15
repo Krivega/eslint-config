@@ -2,7 +2,8 @@ import stylisticPlugin from '@stylistic/eslint-plugin';
 import tsPlugin from '@typescript-eslint/eslint-plugin';
 import tsParser from '@typescript-eslint/parser';
 import type { ESLint, Linter } from 'eslint';
-import pluginImport from 'eslint-plugin-import';
+import { createTypeScriptImportResolver } from 'eslint-import-resolver-typescript';
+import pluginImport from 'eslint-plugin-import-x';
 import prettierPlugin from 'eslint-plugin-prettier';
 import unicornPlugin from 'eslint-plugin-unicorn';
 import globals from 'globals';
@@ -29,14 +30,14 @@ const config: Linter.Config[] = [
     plugins: {
       unicorn: unicornPlugin,
       prettier: prettierPlugin,
+      // Сохраняем существующие директивы eslint-disable и потребительские переопределения.
       import: pluginImport,
+      'import-x': pluginImport,
       '@typescript-eslint': tsPlugin as unknown as ESLint.Plugin,
       '@stylistic': stylisticPlugin,
     },
     settings: {
-      'import/resolver': {
-        typescript: {},
-      },
+      'import-x/resolver-next': [createTypeScriptImportResolver()],
     },
 
     rules: {
@@ -124,12 +125,6 @@ const config: Linter.Config[] = [
         },
       ],
       'prettier/prettier': ['error'],
-      'no-plusplus': [
-        'error',
-        {
-          allowForLoopAfterthoughts: true,
-        },
-      ],
       'no-restricted-exports': [
         'error',
         {
@@ -170,59 +165,6 @@ const config: Linter.Config[] = [
             'vite.*.{ts,js}',
             'scripts/**',
           ],
-        },
-      ],
-      'unicorn/name-replacements': [
-        'error',
-        {
-          replacements: {
-            arg: false,
-            param: false,
-            params: false,
-            prev: false,
-            prop: false,
-            props: false,
-            ref: false,
-            refs: false,
-            deps: false,
-          },
-          allowList: {
-            arg: true,
-            Arg: true,
-            param: true,
-            params: true,
-            prev: true,
-            prop: true,
-            props: true,
-            ref: true,
-            refs: true,
-            i: true,
-            j: true,
-            args: true,
-            Args: true,
-            e2e: true,
-            db: true,
-            DB: true,
-            Props: true,
-            Prop: true,
-            Params: true,
-            env: true,
-            Env: true,
-            Prev: true,
-            dir: true,
-            Dir: true,
-            utils: true,
-            Utils: true,
-            dev: true,
-            Dev: true,
-            Ref: true,
-            req: true,
-            Req: true,
-            res: true,
-            Res: true,
-            deps: true,
-            Deps: true,
-          },
         },
       ],
       'unicorn/filename-case': [
@@ -280,7 +222,6 @@ const config: Linter.Config[] = [
         },
       ],
       '@typescript-eslint/no-array-constructor': ['error'],
-      '@typescript-eslint/no-dupe-class-members': ['error'],
       '@typescript-eslint/no-empty-function': [
         'error',
         {
@@ -290,7 +231,6 @@ const config: Linter.Config[] = [
       '@typescript-eslint/no-implied-eval': ['error'],
       '@typescript-eslint/no-loss-of-precision': ['error'],
       '@typescript-eslint/no-loop-func': ['error'],
-      '@typescript-eslint/no-redeclare': ['error'],
       'no-shadow': 'off',
       '@typescript-eslint/no-shadow': ['error'],
       '@typescript-eslint/only-throw-error': 'error',
@@ -326,7 +266,6 @@ const config: Linter.Config[] = [
         },
       ],
       'import/export': ['error'],
-      'import/no-unresolved': ['error'],
       'import/no-named-as-default': ['error'],
       'import/no-mutable-exports': ['error'],
       'import/no-amd': ['error'],
@@ -424,7 +363,6 @@ const config: Linter.Config[] = [
       'require-yield': ['error'],
       'symbol-description': ['error'],
       'no-delete-var': ['error'],
-      'no-label-var': ['error'],
       'no-restricted-globals': [
         'error',
         {
@@ -517,23 +455,7 @@ const config: Linter.Config[] = [
         },
       ],
       'no-bitwise': ['error'],
-      'no-continue': ['error'],
       'no-multi-assign': ['error'],
-      'no-new-object': ['error'],
-      'no-underscore-dangle': [
-        'error',
-        {
-          allow: [],
-          allowAfterThis: false,
-          allowAfterSuper: false,
-          enforceInMethodNames: true,
-          allowAfterThisConstructor: false,
-          allowFunctionParams: true,
-          enforceInClassFields: false,
-          allowInArrayDestructuring: true,
-          allowInObjectDestructuring: true,
-        },
-      ],
       'no-unneeded-ternary': [
         'error',
         {
@@ -545,7 +467,6 @@ const config: Linter.Config[] = [
       'prefer-exponentiation-operator': ['error'],
       'prefer-object-spread': ['error'],
       'unicode-bom': ['error', 'never'],
-      'global-require': ['error'],
       'no-buffer-constructor': ['error'],
       'no-new-require': ['error'],
       'no-path-concat': ['error'],
@@ -587,7 +508,6 @@ const config: Linter.Config[] = [
           allowVoid: false,
         },
       ],
-      'block-scoped-var': ['error'],
       'default-case': [
         'error',
         {
@@ -616,7 +536,6 @@ const config: Linter.Config[] = [
       'no-eval': ['error'],
       'no-extend-native': ['error'],
       'no-extra-bind': ['error'],
-      'no-extra-label': ['error'],
       'no-fallthrough': ['error'],
       'no-global-assign': [
         'error',
@@ -728,7 +647,6 @@ const config: Linter.Config[] = [
       'no-void': ['error'],
       'no-with': ['error'],
       radix: ['error'],
-      'vars-on-top': ['error'],
       yoda: ['error'],
       'unicorn/better-regex': ['error'],
       'unicorn/catch-error-name': ['error'],
@@ -769,13 +687,11 @@ const config: Linter.Config[] = [
       'unicorn/no-negation-in-equality-check': ['error'],
       'unicorn/no-new-array': ['error'],
       'unicorn/no-new-buffer': ['error'],
-      'unicorn/no-null': ['error'],
       'unicorn/no-object-as-default-parameter': ['error'],
       'unicorn/no-process-exit': ['error'],
       'unicorn/no-single-promise-in-promise-methods': ['error'],
       'unicorn/no-static-only-class': ['error'],
       'unicorn/no-thenable': ['error'],
-      'unicorn/no-this-assignment': ['error'],
       'unicorn/no-typeof-undefined': ['error'],
       'unicorn/no-unnecessary-await': ['error'],
       'unicorn/no-unnecessary-polyfills': ['error'],
@@ -831,7 +747,7 @@ const config: Linter.Config[] = [
       'unicorn/prefer-string-trim-start-end': ['error'],
       'unicorn/prefer-structured-clone': ['error'],
       'unicorn/prefer-switch': ['error'],
-      'unicorn/prefer-ternary': ['error'],
+      'unicorn/prefer-ternary': ['error', 'only-single-line'],
       'unicorn/prefer-top-level-await': ['error'],
       'unicorn/prefer-type-error': ['error'],
       'unicorn/relative-url-style': ['error'],
@@ -850,7 +766,6 @@ const config: Linter.Config[] = [
       '@typescript-eslint/no-wrapper-object-types': 'error',
       '@typescript-eslint/no-empty-object-type': 'error',
       '@typescript-eslint/no-unsafe-function-type': 'error',
-      '@typescript-eslint/no-restricted-types': 'error',
       '@typescript-eslint/class-literal-property-style': ['error'],
       '@typescript-eslint/consistent-generic-constructors': ['error'],
       '@typescript-eslint/consistent-indexed-object-style': ['error'],
@@ -860,35 +775,26 @@ const config: Linter.Config[] = [
       '@typescript-eslint/consistent-type-imports': ['error'],
       '@typescript-eslint/explicit-member-accessibility': ['error'],
       '@typescript-eslint/max-params': ['error'],
-      '@typescript-eslint/member-ordering': ['error'],
       '@typescript-eslint/method-signature-style': ['error'],
       '@typescript-eslint/no-array-delete': ['error'],
       '@typescript-eslint/no-base-to-string': ['error'],
-      '@typescript-eslint/no-confusing-non-null-assertion': ['error'],
       '@typescript-eslint/no-duplicate-enum-values': ['error'],
       '@typescript-eslint/no-duplicate-type-constituents': ['error'],
       '@typescript-eslint/no-dynamic-delete': ['error'],
-      '@typescript-eslint/no-empty-interface': ['error'],
       '@typescript-eslint/no-explicit-any': ['error'],
-      '@typescript-eslint/no-extra-non-null-assertion': ['error'],
       '@typescript-eslint/no-extraneous-class': ['error'],
       '@typescript-eslint/no-floating-promises': ['error'],
       '@typescript-eslint/no-for-in-array': ['error'],
       '@typescript-eslint/no-import-type-side-effects': ['error'],
       '@typescript-eslint/no-inferrable-types': ['error'],
-      '@typescript-eslint/no-invalid-this': ['error'],
       '@typescript-eslint/no-invalid-void-type': ['error'],
-      '@typescript-eslint/no-meaningless-void-operator': ['error'],
       '@typescript-eslint/no-misused-new': ['error'],
       '@typescript-eslint/no-misused-promises': ['error'],
       '@typescript-eslint/no-mixed-enums': ['error'],
       '@typescript-eslint/no-namespace': ['error'],
-      '@typescript-eslint/no-non-null-asserted-nullish-coalescing': ['error'],
-      '@typescript-eslint/no-non-null-asserted-optional-chain': ['error'],
       '@typescript-eslint/no-non-null-assertion': ['error'],
       '@typescript-eslint/no-redundant-type-constituents': ['error'],
       '@typescript-eslint/no-require-imports': ['error'],
-      '@typescript-eslint/no-restricted-imports': ['error'],
       '@typescript-eslint/no-this-alias': ['error'],
       '@typescript-eslint/no-unnecessary-boolean-literal-compare': ['error'],
       '@typescript-eslint/no-unnecessary-condition': ['error'],
@@ -907,8 +813,6 @@ const config: Linter.Config[] = [
       '@typescript-eslint/no-unsafe-return': ['error'],
       '@typescript-eslint/no-unsafe-unary-minus': ['error'],
       '@typescript-eslint/no-useless-empty-export': ['error'],
-      '@typescript-eslint/no-var-requires': ['error'],
-      '@typescript-eslint/non-nullable-type-assertion-style': ['error'],
       '@typescript-eslint/parameter-properties': ['error'],
       '@typescript-eslint/prefer-as-const': ['error'],
       '@typescript-eslint/prefer-enum-initializers': ['error'],
@@ -939,7 +843,6 @@ const config: Linter.Config[] = [
       '@typescript-eslint/strict-boolean-expressions': ['error'],
       '@typescript-eslint/switch-exhaustiveness-check': ['error'],
       '@typescript-eslint/triple-slash-reference': ['error'],
-      '@typescript-eslint/typedef': ['error'],
       '@typescript-eslint/unbound-method': [
         'error',
         {
@@ -1003,12 +906,11 @@ const config: Linter.Config[] = [
       '@stylistic/linebreak-style': ['error', 'unix'],
       '@stylistic/max-statements-per-line': ['error', { max: 1 }],
       '@stylistic/new-parens': ['error'],
-      '@stylistic/no-mixed-spaces-and-tabs': ['error'],
       '@stylistic/no-multiple-empty-lines': ['error', { max: 1, maxBOF: 0, maxEOF: 0 }],
       '@stylistic/no-tabs': ['error'],
       '@stylistic/no-trailing-spaces': ['error'],
       '@stylistic/no-whitespace-before-property': ['error'],
-      '@stylistic/object-curly-spacing': ['error', 'always'],
+      // '@stylistic/object-curly-spacing': ['error', 'always'], // работает с ошибками
       '@stylistic/object-property-newline': ['error', { allowAllPropertiesOnSameLine: true }],
       '@stylistic/operator-linebreak': [
         'error',

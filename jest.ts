@@ -5,7 +5,7 @@ import config from './index.js';
 const jestConfig: Linter.Config[] = [
   ...config,
   {
-    files: ['**/*.spec.js', '**/*.test.js', '**/__tests__/**/*.ts', '**/__tests__/**/*.tsx'],
+    files: ['**/*.{spec,test}.{js,jsx,ts,tsx}', '**/__tests__/**/*.{js,jsx,ts,tsx}'],
     plugins: { jest: pluginJest },
     languageOptions: {
       globals: pluginJest.environments.globals.globals,
